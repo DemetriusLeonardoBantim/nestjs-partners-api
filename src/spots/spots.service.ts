@@ -12,7 +12,7 @@ export class SpotsService {
   }
 
   findAll() {
-    return `This action returns all spots`;
+    return this.prismaService.spot.findMany();
   }
 
   findOne(id: number) {
