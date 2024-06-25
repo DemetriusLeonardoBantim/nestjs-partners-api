@@ -19,13 +19,13 @@ export class SpotsService {
       throw new Error('Event not found');
     }
 
-    this.prismaService.spot.create({
+    const response = this.prismaService.spot.create({
       data: {
         ...createSpotDto,
         status: SpotStatus.available,
       },
     });
-    return 'This action adds a new spot';
+    return response;
   }
 
   findAll(eventId: string) {
